@@ -8,7 +8,8 @@ class Login extends Component {
   render() {
     return(
       <div className="Login-bg">
-        <FadeTransform in transformProps={{ exitTransform: 'translateY(-20px)' }}>
+        <FadeTransform in
+          transformProps={{ exitTransform: 'translateY(-20px)' }} className="col-12">
           <div className="col-12 mt-5 text-center Login-title">
             <h2>The Simple Survey</h2>
           </div>

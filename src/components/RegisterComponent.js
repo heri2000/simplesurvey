@@ -8,12 +8,8 @@ class Register extends Component {
   render() {
     return(
       <div className="Register-bg">
-        <FadeTransform in transformProps={{
-            exitTransform: 'translateY(-20px)',
-            style: {
-              width: '100vw'
-            }
-          }}>
+        <FadeTransform in
+          transformProps={{exitTransform: 'translateY(-20px)'}} className="col-12">
           <div className="col-12 mt-5 text-center Login-title">
             <h2>The Simple Survey</h2>
           </div>
