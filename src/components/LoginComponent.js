@@ -14,7 +14,7 @@ class Login extends Component {
             <h2>The Simple Survey</h2>
           </div>
           <div className="col-12 mt-5 row justify-content-evenly">
-            <LoginForm />
+            <LoginForm {...this.props} />
             <div className="col-11 col-md-5 mb-5 order-md-1 align-middle Login-intro">
               <p className="text-left">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -52,7 +52,7 @@ class LoginForm extends Component {
   
   handleLogin(event) {
     this.setState({ ...this.state, disabled: true });
-    this.history.replace("/main");
+    this.props.history.push("/list");
     event.preventDefault();
   }
 

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import Login from './LoginComponent';
 import Register from './RegisterComponent';
+import SurveyList from './SurveyListComponent';
 
 class Main extends Component {
   render() {
@@ -10,10 +11,11 @@ class Main extends Component {
         <Switch>
           <Route exact path='/' component={Login} />
           <Route path='/register' component={Register} />
+          <Route path='/list' component={SurveyList} />
         </Switch>
       </div>
     );
   }
 }
 
-export default Main;
+export default withRouter(Main);

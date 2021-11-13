@@ -14,7 +14,7 @@ class Register extends Component {
             <h2>The Simple Survey</h2>
           </div>
           <div className="col-12 mt-5 row justify-content-center">
-            <RegisterForm />
+            <RegisterForm {...this.props} />
           </div>
         </FadeTransform>
       </div>
@@ -42,14 +42,14 @@ class RegisterForm extends Component {
   
   handleRegister(event) {
     this.setState({ ...this.state, disabled: true });
-    this.history.replace("/login");
+    this.props.history.push("/");
     event.preventDefault();
   }
 
   render() {
     return(
       <div className="col-11 col-md-6 col-xl-4 Register-form">
-        <Form className="m-3 mt-4 mb-4">
+        <Form onSubmit={this.handleRegister} className="m-3 mt-4 mb-4">
           <FormGroup className="mb-2">
             <h4 className="text-center">Register</h4>
           </FormGroup>
