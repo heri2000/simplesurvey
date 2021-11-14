@@ -7,13 +7,13 @@ class SurveyList extends Component {
   render() {
     return(
       <div className="SurveyList-bg">
-      <FadeTransform in
-        transformProps={{ exitTransform: 'translateY(20px)' }} className="col-12">
-        <Container>
-          <RenderHeader {...this.props} />
-          <RenderList {...this.props} />
-        </Container>
-      </FadeTransform>
+        <FadeTransform in
+          transformProps={{ exitTransform: 'translateY(20px)' }} className="col-12">
+          <Container>
+            <RenderHeader {...this.props} />
+            <RenderList {...this.props} />
+          </Container>
+        </FadeTransform>
       </div>
     );
   }
@@ -38,10 +38,23 @@ function RenderHeader(props) {
 }
 
 class RenderList extends Component {
+  constructor(props) {
+    super(props);
+    this.handleNewSurvey = this.handleNewSurvey.bind(this);
+    this.handleEditSurvey = this.handleEditSurvey.bind(this);
+  }
+
+  handleNewSurvey() {
+    this.props.history.push("/edit");
+  }
+
+  handleEditSurvey() {
+    this.props.history.push("/edit");
+  }
+
   render() {
-    
     return(
-      <Row className="mt-2 rounded-2 bg-white bg-opacity-25 p-2">
+      <Row className="mt-4 mb-4 rounded-2 bg-white bg-opacity-25 p-2">
         <Col className="col-12">
 
           <Row className="rounded-2 bg-white bg-opacity-25 p-1">
@@ -49,17 +62,20 @@ class RenderList extends Component {
               <h4 className="text-center">My Surveys</h4>
             </Col>
             <Col className="col-2 d-flex justify-content-end">
-              <button className="btn btn-danger">New Survey</button>
+              <button className="btn btn-danger"
+                onClick={this.handleNewSurvey}>
+                New Survey
+              </button>
             </Col>
           </Row>
 
           <Row>
             <Col className="col-12 mt-3">
-              <RenderSurvey />
-              <RenderSurvey />
-              <RenderSurvey />
-              <RenderSurvey />
-              <RenderSurvey />
+              <RenderSurvey handleEditSurvey={this.handleEditSurvey} />
+              <RenderSurvey handleEditSurvey={this.handleEditSurvey} />
+              <RenderSurvey handleEditSurvey={this.handleEditSurvey} />
+              <RenderSurvey handleEditSurvey={this.handleEditSurvey} />
+              <RenderSurvey handleEditSurvey={this.handleEditSurvey} />
             </Col>
           </Row>
 
@@ -98,10 +114,10 @@ class RenderSurvey extends Component {
               toggle={this.toggle}
               direction="left">
             <DropdownToggle className="btn btn-outline-light SurveyList-toggle-button">
-              ...
+              <span className="fa fa-ellipsis-h"></span>
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem>Edit</DropdownItem>
+              <DropdownItem onClick={this.props.handleEditSurvey}>Edit</DropdownItem>
               <DropdownItem>Show URL</DropdownItem>
               <DropdownItem>Show Result</DropdownItem>
               <DropdownItem>Delete Survey</DropdownItem>

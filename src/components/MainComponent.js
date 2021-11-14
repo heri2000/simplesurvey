@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
+import EditSurvey from './EditSurveyComponent';
 import Login from './LoginComponent';
 import Register from './RegisterComponent';
 import SurveyList from './SurveyListComponent';
@@ -12,6 +13,7 @@ class Main extends Component {
           <Route exact path='/' component={Login} />
           <Route path='/register' component={Register} />
           <Route path='/list' component={SurveyList} />
+          <Route path='/edit' component={EditSurvey} />
         </Switch>
       </div>
     );
