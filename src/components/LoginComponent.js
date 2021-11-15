@@ -17,11 +17,11 @@ class Login extends Component {
             <LoginForm {...this.props} />
             <div className="col-11 col-md-5 mb-5 order-md-1 align-middle Login-intro">
               <p className="text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Morbi vel vehicula elit, elementum efficitur leo.
-                Cras hendrerit nibh vitae convallis posuere.
-                Mauris sagittis, enim nec lacinia sodales, velit nunc tempor nisl,
-                nec gravida justo ex eu magna.
+                The Simple Survey, like its name,
+                is a website that enable users to create some surveys
+                which is very simple.
+                We only provide two types of input from the audiences:
+                text or multiple choice.
               </p>
             </div>
           </div>
