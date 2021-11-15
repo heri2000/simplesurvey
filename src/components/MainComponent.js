@@ -4,6 +4,7 @@ import EditSurvey from './EditSurveyComponent';
 import Login from './LoginComponent';
 import Register from './RegisterComponent';
 import SurveyList from './SurveyListComponent';
+import SurveyResult from './SurveyResultComponent';
 
 class Main extends Component {
   render() {
@@ -14,6 +15,7 @@ class Main extends Component {
           <Route path='/register' component={Register} />
           <Route path='/list' component={SurveyList} />
           <Route path='/edit' component={EditSurvey} />
+          <Route path='/result' component={SurveyResult} />
         </Switch>
       </div>
     );

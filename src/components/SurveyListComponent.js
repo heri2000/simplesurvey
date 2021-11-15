@@ -42,6 +42,7 @@ class RenderList extends Component {
     super(props);
     this.handleNewSurvey = this.handleNewSurvey.bind(this);
     this.handleEditSurvey = this.handleEditSurvey.bind(this);
+    this.handleShowResult = this.handleShowResult.bind(this);
   }
 
   handleNewSurvey() {
@@ -50,6 +51,10 @@ class RenderList extends Component {
 
   handleEditSurvey() {
     this.props.history.push("/edit");
+  }
+
+  handleShowResult() {
+    this.props.history.push("/result");
   }
 
   render() {
@@ -71,11 +76,26 @@ class RenderList extends Component {
 
           <Row>
             <Col className="col-12 mt-3">
-              <RenderSurvey handleEditSurvey={this.handleEditSurvey} />
-              <RenderSurvey handleEditSurvey={this.handleEditSurvey} />
-              <RenderSurvey handleEditSurvey={this.handleEditSurvey} />
-              <RenderSurvey handleEditSurvey={this.handleEditSurvey} />
-              <RenderSurvey handleEditSurvey={this.handleEditSurvey} />
+              <RenderSurvey
+                handleEditSurvey={this.handleEditSurvey}
+                handleShowResult={this.handleShowResult}
+                />
+              <RenderSurvey
+                handleEditSurvey={this.handleEditSurvey}
+                handleShowResult={this.handleShowResult}
+                />
+              <RenderSurvey
+                handleEditSurvey={this.handleEditSurvey}
+                handleShowResult={this.handleShowResult}
+                />
+              <RenderSurvey
+                handleEditSurvey={this.handleEditSurvey}
+                handleShowResult={this.handleShowResult}
+                />
+              <RenderSurvey
+                handleEditSurvey={this.handleEditSurvey}
+                handleShowResult={this.handleShowResult}
+                />
             </Col>
           </Row>
 
@@ -119,7 +139,7 @@ class RenderSurvey extends Component {
             <DropdownMenu>
               <DropdownItem onClick={this.props.handleEditSurvey}>Edit</DropdownItem>
               <DropdownItem>Show URL</DropdownItem>
-              <DropdownItem>Show Result</DropdownItem>
+              <DropdownItem onClick={this.props.handleShowResult}>Show Result</DropdownItem>
               <DropdownItem>Delete Survey</DropdownItem>
             </DropdownMenu>
           </Dropdown>
